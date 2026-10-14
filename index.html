@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>School Student Email List</title>
+<style>
+:root{--bg:#f4f7fb;--panel:#fff;--ink:#172033;--muted:#6b7280;--line:#e5eaf2;--blue:#2563eb;--blue2:#1d4ed8;--green:#0f9f6e;--shadow:0 12px 35px rgba(23,32,51,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:#101a32;color:#fff;padding:22px max(22px,calc((100% - 1180px)/2));display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}.logo{width:42px;height:42px;display:grid;place-items:center;background:#2f6cf6;border-radius:12px;font-size:22px}.brand h1{font-size:18px;margin:0}.brand p{margin:2px 0 0;color:#b9c4db;font-size:12px}.status{font-size:12px;border:1px solid #40506d;border-radius:99px;padding:7px 11px;color:#dbeafe}
+main{max-width:1180px;margin:28px auto;padding:0 22px 42px}.intro{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:22px;flex-wrap:wrap}.intro h2{font-size:28px;letter-spacing:-.6px;margin:0 0 5px}.intro p{color:var(--muted);margin:0}.local-note{font-size:12px;color:#516079;background:#eaf0ff;border-radius:10px;padding:9px 12px}
+.layout{display:grid;grid-template-columns:320px minmax(0,1fr);gap:20px;align-items:start}.card{background:var(--panel);border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow)}.card-head{padding:20px 20px 0}.card-head h3{font-size:16px;margin:0 0 4px}.card-head p{font-size:13px;color:var(--muted);margin:0}.form{padding:20px;display:grid;gap:15px}.field label{display:block;font-size:12px;font-weight:700;margin-bottom:7px;color:#344054}.field input,.search{width:100%;border:1px solid #d8dfeb;border-radius:10px;padding:11px 12px;font:inherit;color:var(--ink);outline:none;background:#fff}.field input:focus,.search:focus{border-color:#6d95ff;box-shadow:0 0 0 3px #2563eb18}.hint{font-size:11px;color:var(--muted);margin-top:6px}.primary,.secondary,.smallbtn{border:0;border-radius:10px;font:inherit;font-weight:700;cursor:pointer;transition:.15s}.primary{background:var(--blue);color:white;padding:12px 15px;width:100%;box-shadow:0 5px 12px #2563eb25}.primary:hover{background:var(--blue2);transform:translateY(-1px)}.secondary{background:#edf2ff;color:#244db3;padding:10px 12px}.secondary:hover{background:#dfe8ff}.smallbtn{padding:8px 10px;background:#f1f4f9;color:#344054;font-size:12px}.smallbtn:hover{background:#e5eaf2}.helper{border-top:1px solid var(--line);padding:15px 20px;color:var(--muted);font-size:12px}
+.list-card{overflow:hidden}.list-top{padding:20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}.list-top h3{font-size:16px;margin:0}.list-top p{font-size:12px;color:var(--muted);margin:3px 0 0}.actions{display:flex;gap:8px;flex-wrap:wrap}.toolbar{padding:14px 20px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:center;flex-wrap:wrap}.search{flex:1;min-width:180px}.count{font-size:12px;color:var(--muted);white-space:nowrap}.table-wrap{overflow:auto;max-height:520px}table{width:100%;border-collapse:collapse;min-width:430px}th,td{text-align:left;padding:12px 20px;border-bottom:1px solid #edf0f5}th{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:#7b8495;background:#fafbfe;position:sticky;top:0}td{font-size:13px}td.num{color:#8b94a5;width:70px}td.email{font-weight:600;color:#26344e}td.row-action{text-align:right;width:75px}.empty{padding:48px 20px;text-align:center;color:var(--muted)}.empty strong{display:block;color:#344054;margin-bottom:5px}.footer{margin-top:18px;text-align:center;color:#8a93a3;font-size:11px}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#14213d;color:#fff;border-radius:10px;padding:11px 16px;box-shadow:var(--shadow);font-size:13px;display:none;z-index:5}.toast.show{display:block}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.intro h2{font-size:24px}main{margin-top:22px}.table-wrap{max-height:460px}}@media(max-width:460px){header{padding:17px}.status{display:none}main{padding:0 13px 28px}.card-head,.form,.list-top,.toolbar{padding-left:15px;padding-right:15px}th,td{padding:11px 14px}.intro{align-items:flex-start}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><div class="logo" aria-hidden="true">✉</div><div><h1>School Student Account Manager</h1><p>Student email list generator</p></div></div>
+  <div class="status">● No sign-in required</div>
+</header>
+<main>
+  <div class="intro"><div><h2>Student email list</h2><p>Generate, search, copy, and export a list in seconds.</p></div><div class="local-note">Saved in this browser only</div></div>
+  <div class="layout">
+    <section class="card">
+      <div class="card-head"><h3>Generate a list</h3><p>Choose the email prefix and number of sample addresses.</p></div>
+      <form class="form" id="generator">
+        <div class="field"><label for="prefix">Email prefix</label><input id="prefix" value="stephenstudent" maxlength="48" autocomplete="off" required><div class="hint">Example: stephenstudent → stephenstudent1@gmail.com</div></div>
+        <div class="field"><label for="domain">Email domain</label><input id="domain" value="gmail.com" maxlength="100" autocomplete="off" required><div class="hint">This creates formatted sample addresses only.</div></div>
+        <div class="field"><label for="amount">Number of addresses (1–300)</label><input id="amount" type="number" min="1" max="300" value="300" required></div>
+        <button class="primary" type="submit">↻ &nbsp; Fetch list</button>
+      </form>
+      <div class="helper">Your generated list is saved locally in this browser. No account or sign-in is needed.</div>
+    </section>
+    <section class="card list-card">
+      <div class="list-top"><div><h3>Generated addresses</h3><p id="summary">No list generated yet</p></div><div class="actions"><button class="secondary" id="copyAll" type="button">Copy all</button><button class="secondary" id="exportCsv" type="button">Export CSV</button></div></div>
+      <div class="toolbar"><input class="search" id="search" type="search" placeholder="Search email addresses…" aria-label="Search email addresses"><span class="count" id="count">0 addresses</span></div>
+      <div id="tableArea" class="empty"><strong>Your list will appear here</strong>Click “Fetch list” to generate sample email addresses.</div>
+    </section>
+  </div>
+  <div class="footer">Sample email strings only · No Gmail accounts are created or verified</div>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  let emails = [];
+  let toastTimer;
+  function notify(message) {
+    const el = $('toast'); el.textContent = message; el.classList.add('show');
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('show'), 2400);
+  }
+  function safeText(value) {
+    return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  }
+  function render() {
+    const query = $('search').value.trim().toLowerCase();
+    const filtered = emails.filter(email => email.toLowerCase().includes(query));
+    $('count').textContent = `${filtered.length} of ${emails.length} addresses`;
+    $('summary').textContent = emails.length ? `${emails.length} sample addresses generated` : 'No list generated yet';
+    const area = $('tableArea');
+    if (!filtered.length) {
+      area.className = 'empty';
+      area.innerHTML = emails.length ? '<strong>No matching addresses</strong>Try a different search.' : '<strong>Your list will appear here</strong>Click “Fetch list” to generate sample email addresses.';
+      return;
+    }
+    area.className = 'table-wrap';
+    area.innerHTML = '<table><thead><tr><th>#</th><th>Email address</th><th></th></tr></thead><tbody>' +
+      filtered.map(email => {
+        const number = emails.indexOf(email) + 1;
+        return `<tr><td class="num">${number}</td><td class="email">${safeText(email)}</td><td class="row-action"><button class="smallbtn" type="button" data-copy="${safeText(email)}">Copy</button></td></tr>`;
+      }).join('') + '</tbody></table>';
+    area.querySelectorAll('[data-copy]').forEach(btn => btn.addEventListener('click', () => copyText(btn.getAttribute('data-copy'))));
+  }
+  async function copyText(text) {
+    try {
+      if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(text);
+      else {
+        const temp = document.createElement('textarea'); temp.value = text; temp.style.position='fixed'; temp.style.opacity='0';
+        document.body.appendChild(temp); temp.select();
+        const ok = document.execCommand('copy'); temp.remove();
+        if (!ok) throw new Error('Copy unavailable');
+      }
+      notify('Copied to clipboard');
+    } catch { notify('Copy failed. Select and copy the address manually.'); }
+  }
+  $('generator').addEventListener('submit', event => {
+    event.preventDefault();
+    const prefix = $('prefix').value.trim();
+    const domain = $('domain').value.trim().replace(/^@+/, '');
+    const amount = Number($('amount').value);
+    if (!prefix || !domain || !Number.isInteger(amount) || amount < 1 || amount > 300) {
+      notify('Enter a prefix, domain, and a count from 1 to 300.'); return;
+    }
+    if (!/^[a-zA-Z0-9._+-]+$/.test(prefix) || !/^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(domain)) {
+      notify('Use a valid-looking prefix and domain.'); return;
+    }
+    emails = Array.from({length: amount}, (_, i) => `${prefix}${i + 1}@${domain}`);
+    $('search').value = '';
+    try { localStorage.setItem('schoolStudentEmailList', JSON.stringify({prefix, domain, amount, emails})); } catch {}
+    render(); notify(`${amount} sample addresses generated`);
+  });
+  $('search').addEventListener('input', render);
+  $('copyAll').addEventListener('click', () => emails.length ? copyText(emails.join('\n')) : notify('Generate a list first.'));
+  $('exportCsv').addEventListener('click', () => {
+    if (!emails.length) { notify('Generate a list first.'); return; }
+    const rows = [['Number','Email address'], ...emails.map((email, i) => [i + 1, email])];
+    const csv = rows.map(row => row.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(',')).join('\r\n');
+    const blob = new Blob(['\ufeff' + csv], {type:'text/csv;charset=utf-8;'});
+    const url = URL.createObjectURL(blob); const link = document.createElement('a');
+    link.href = url; link.download = 'school-student-emails.csv'; document.body.appendChild(link); link.click(); link.remove(); URL.revokeObjectURL(url);
+    notify('CSV export started');
+  });
+  try {
+    const saved = JSON.parse(localStorage.getItem('schoolStudentEmailList') || 'null');
+    if (saved && Array.isArray(saved.emails)) {
+      emails = saved.emails.filter(e => typeof e === 'string');
+      $('prefix').value = saved.prefix || 'stephenstudent';
+      $('domain').value = saved.domain || 'gmail.com';
+      $('amount').value = saved.amount || emails.length;
+      render();
+    }
+  } catch {}
+})();
+</script>
+</body>
+</html>
